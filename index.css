@@ -1,0 +1,117 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    font-weight: bold;
+
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid;
+    padding: 20px;
+    border-radius: 0 40px 0 40px;
+    background:linear-gradient(50deg,rgb(167, 65, 239),pink,rgb(172, 83, 236));
+
+}
+nav{
+    display: flex;
+    gap: 50px;
+    height: 5px;
+}
+nav a{
+    height: 30px;
+    width: auto;
+    padding: 5px;
+    /* font-weight: bold; */
+
+    /* border: 1px solid; */
+}
+nav a:hover{
+    background-color: rgb(222, 188, 246);
+    border-radius: 10px;
+}
+#icon{
+    display: none;
+}
+
+@keyframes image{
+    0%{
+        height: 90vh;
+        width: 100%;
+        background: url(./AdobeStock_1057863972_Preview.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-size: 100% 100%;
+    }
+    50%{
+        background: url(./curly.jpeg);
+        height: 90vh;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-size: 100% 100%;
+    }
+    100%{
+        background: url(./hairoil.jpeg);
+        height: 90vh;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-size: 100% 100%;
+    }
+}
+label{
+    display: none;
+}
+#check{
+    display: none;
+}
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:30px;
+    color: white;
+    font-size: 30px;
+    animation: image 10s infinite;
+}
+@media(max-width:768px){
+nav{
+    /* border: 3px solid black; */
+    width: 100%;
+    height: 100vh;
+    /* max-width: auto; */
+    position: absolute;
+    top: 60px;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+    /* right: 20px; */
+   left: 100%;
+   gap: 45px;
+}
+nav a{
+    color:indigo;
+    background-color: pink;
+    border-radius:0 10px 0 10px ;
+}
+#icon{
+    display: flex;
+}
+label{
+    display: flex;
+}
+div{
+    height: 10vh;
+    width: 100%;
+    font-size: 15px;
+
+}
+#check:checked~nav{
+    left: 35%;
+}
+}
