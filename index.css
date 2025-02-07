@@ -1,117 +1,133 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-a{
+
+a {
     text-decoration: none;
     font-weight: bold;
-
 }
-header{
+
+header {
     display: flex;
     justify-content: space-between;
-    border: 1px solid;
-    padding: 20px;
-    border-radius: 0 40px 0 40px;
-    background:linear-gradient(50deg,rgb(167, 65, 239),pink,rgb(172, 83, 236));
-
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(50deg, rgb(167, 65, 239), pink, rgb(172, 83, 236));
+    position: relative;
 }
-nav{
+
+.logo {
+    font-size: 24px;
+    color: white;
+}
+
+nav {
     display: flex;
-    gap: 50px;
-    height: 5px;
+    gap: 20px;
 }
-nav a{
-    height: 30px;
-    width: auto;
-    padding: 5px;
-    /* font-weight: bold; */
 
-    /* border: 1px solid; */
+nav a {
+    display: flex;
+    padding: 10px 15px;
+    color: white;
+    /* justify-content: flex-end; */
+
 }
-nav a:hover{
+
+nav a:hover {
     background-color: rgb(222, 188, 246);
     border-radius: 10px;
 }
-#icon{
+
+/* Hide checkbox */
+#check {
     display: none;
 }
 
-@keyframes image{
-    0%{
-        height: 90vh;
-        width: 100%;
-        background: url(./AdobeStock_1057863972_Preview.jpeg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-size: 100% 100%;
-    }
-    50%{
-        background: url(./curly.jpeg);
-        height: 90vh;
-        width: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-size: 100% 100%;
-    }
-    100%{
-        background: url(./hairoil.jpeg);
-        height: 90vh;
-        width: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-size: 100% 100%;
-    }
+/* Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
 }
-label{
+
+#icon {
     display: none;
 }
-#check{
-    display: none;
-}
-div{
+
+/* Image Animation */
+.img {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:30px;
+    padding: 30px;
     color: white;
     font-size: 30px;
     animation: image 10s infinite;
-}
-@media(max-width:768px){
-nav{
-    /* border: 3px solid black; */
+    text-align: center;
+    height: 80vh;
     width: 100%;
-    height: 100vh;
-    /* max-width: auto; */
-    position: absolute;
-    top: 60px;
-    padding: 5px;
-    flex-direction: column;
-    align-items: center;
-    /* right: 20px; */
-   left: 100%;
-   gap: 45px;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
-nav a{
-    color:indigo;
-    background-color: pink;
-    border-radius:0 10px 0 10px ;
-}
-#icon{
-    display: flex;
-}
-label{
-    display: flex;
-}
-div{
-    height: 10vh;
-    width: 100%;
-    font-size: 15px;
 
+@keyframes image {
+    0% {
+        background: url(./AdobeStock_1057863972_Preview.jpeg);
+        background-size: 100% 100%;
+        background-repeat:no-repeat;
+    }
+    75% {
+        background: url(./curly.jpeg);
+        background-size: cover;
+    }
+    100% {
+        background: url(./hairoil.jpeg);
+        background-size: 100% 100%;
+    }
 }
-#check:checked~nav{
-    left: 35%;
-}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 0;
+        /* transition: left 0.3s ease-in-out; */
+    }
+
+    nav a {
+        display: block;
+        padding: 10px;
+        color: indigo;
+        background-color: pink;
+        margin: 8px;
+        border-radius: 0 10px 0 10px;
+    }
+
+    #icon {
+        display: flex;
+    }
+
+    #check:checked ~ nav {
+        left: 0;
+    }
+
+    .img {
+        font-size: 18px;
+        padding: 20px;
+        background-size: 100% 100%;
+    }
 }
